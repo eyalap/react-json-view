@@ -42,6 +42,7 @@ export default class extends React.PureComponent {
     return (
       <div {...Theme(theme, 'link')}>
         <DataTypeLabel type_name={type_name} {...props} />
+        <span>Blat</span>
         <a href={`#/${link}`}>{string}</a>
       </div>
     );
