@@ -1,6 +1,6 @@
 import React from 'react';
 import DataTypeLabel from './DataTypeLabel';
-
+import { getTextFromHyperlink } from '../../helpers/util';
 //theme
 import Theme from './../../themes/getStyle';
 
@@ -38,7 +38,8 @@ export default class extends React.PureComponent {
         const { props } = this;
         const { theme, value } = props;
         let style = { style: { cursor: 'default' } };
-
+        const link = value.match(/href="([^"]*)/)[1];
+        const string = getTextFromHyperlink(value);
         return (
             <div {...Theme(theme, 'link')}>
                 <DataTypeLabel type_name={type_name} {...props} />
@@ -47,7 +48,7 @@ export default class extends React.PureComponent {
                     {...style}
                     onClick={this.toggleCollapsed}
                 >
-                    {value}
+                    <a href={link}>{string}</a>
                 </span>
             </div>
         );
