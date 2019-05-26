@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { toType } from './../helpers/util';
-import stringifyVariable from './../helpers/stringifyVariable';
+import { toType, getTextFromHyperlink } from './../helpers/util';
+// import stringifyVariable from './../helpers/stringifyVariable';
 
 //clibboard icon
 import { Clippy } from './icons';
@@ -26,11 +26,17 @@ export default class extends React.PureComponent {
         }
     }
 
+    getString(str) {
+        if (str.startsWith('<a') && str.endsWith('</a>')) {
+            return getTextFromHyperlink(str)
+        }
+        return str;
+    }
+
     handleCopy = () => {
         const container = document.createElement('textarea');
         const { clickCallback, src, namespace } = this.props;
-
-        container.innerHTML = typeof(src) === 'string' ? src : JSON.stringify(
+        container.innerHTML = typeof(src) === 'string' ? this.getString(src) : JSON.stringify(
             this.clipboardValue(src),
             null,
             '  '

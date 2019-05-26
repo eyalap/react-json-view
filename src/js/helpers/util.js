@@ -53,3 +53,7 @@ export function isTheme(theme) {
     }
     return false;
 }
+
+export function getTextFromHyperlink(linkText) {
+    return linkText.match(/<a [^>]+>([^<]+)<\/a>/)[1];
+}

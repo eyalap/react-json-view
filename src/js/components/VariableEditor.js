@@ -18,6 +18,7 @@ import {
     JsonNull,
     JsonRegexp,
     JsonString,
+    JsonLink,
     JsonUndefined
 } from './DataTypes/DataTypes';
 
@@ -195,6 +196,9 @@ class VariableEditor extends React.PureComponent {
         case false:
             return this.getEditInput();
         case 'string':
+            if (variable.value.startsWith('<a') && variable.value.endsWith('</a>')) {
+                return <JsonLink value={variable.value} {...props} />;
+            }
             return <JsonString value={variable.value} {...props} />;
         case 'integer':
             return <JsonInteger value={variable.value} {...props} />;
