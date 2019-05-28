@@ -37,6 +37,7 @@ ReactDom.render(
                 console.log("select callback", e)
                 console.log(e.namespace)
             }}
+            filterCallbackAction={arg => { console.log(arg)}}
             displayObjectSize={true}
             name={"dev-server"}
             enableClipboard={copy => {
@@ -189,6 +190,7 @@ function getExampleJson1() {
             sibling1: true,
             sibling2: false,
             sibling3: null,
+            sibling4: 'something',
             isString: value => {
                 if (typeof value === "string") {
                     return "string"

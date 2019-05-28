@@ -40,6 +40,7 @@ export default class extends React.PureComponent {
             onDelete,
             displayObjectSize,
             enableClipboard,
+            filterCallbackAction,
             theme,
             iconStyle,
             collapsed,
@@ -107,6 +108,7 @@ export default class extends React.PureComponent {
                     }
                     displayObjectSize={displayObjectSize}
                     enableClipboard={enableClipboard}
+                    filterCallbackAction={filterCallbackAction}
                     indentWidth={indentWidth}
                     displayDataTypes={displayDataTypes}
                     iconStyle={iconStyle}

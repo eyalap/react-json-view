@@ -181,6 +181,25 @@ export class AddCircle extends React.PureComponent {
     }
 }
 
+export class FilterIcon extends React.PureComponent {
+    render() {
+        const {props} = this;
+        const {style, ...rest} = props;
+
+        return (
+            <span {...rest}>
+                <svg {...getIconStyle(style)}
+                    viewBox="0 0 40 40"
+                    fill="currentColor"
+                    preserveAspectRatio="xMidYMid meet"
+                >
+                  <path transform="scale(0.04)" d="M801.714 177.714c5.714 13.714 2.857 29.714-8 40l-281.714 281.714v424c0 14.857-9.143 28-22.286 33.714-4.571 1.714-9.714 2.857-14.286 2.857-9.714 0-18.857-3.429-25.714-10.857l-146.286-146.286c-6.857-6.857-10.857-16-10.857-25.714v-277.714l-281.714-281.714c-10.857-10.286-13.714-26.286-8-40 5.714-13.143 18.857-22.286 33.714-22.286h731.429c14.857 0 28 9.143 33.714 22.286z" />
+                </svg>
+            </span>
+        );
+    }
+}
+
 export class Add extends React.PureComponent {
     render() {
         const {props} = this;

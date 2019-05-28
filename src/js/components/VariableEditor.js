@@ -6,6 +6,7 @@ import dispatcher from './../helpers/dispatcher';
 import parseInput from './../helpers/parseInput';
 import stringifyVariable from './../helpers/stringifyVariable';
 import CopyToClipboard from './CopyToClipboard';
+import ClickToFilter from './FilterCallbackAction';
 
 //data type components
 import {
@@ -52,6 +53,7 @@ class VariableEditor extends React.PureComponent {
             namespace,
             indentWidth,
             enableClipboard,
+            filterCallbackAction,
             onEdit,
             onDelete,
             onSelect,
@@ -120,6 +122,14 @@ class VariableEditor extends React.PureComponent {
                         hidden={editMode}
                         src={variable.value}
                         clickCallback={enableClipboard}
+                        {...{ theme, namespace }}
+                    />
+                ) : null}
+                {filterCallbackAction ? (
+                    <ClickToFilter
+                        keyName={variable.name}
+                        value={variable.value}
+                        clickCallback={filterCallbackAction}
                         {...{ theme, namespace }}
                     />
                 ) : null}
