@@ -191,6 +191,7 @@ function getExampleJson1() {
             sibling2: false,
             sibling3: null,
             sibling4: 'something',
+            sibling5: '<a href="google.com">google link</a>',
             isString: value => {
                 if (typeof value === "string") {
                     return "string"

@@ -33,10 +33,35 @@ export default class extends React.PureComponent {
         return str;
     }
 
+    iterateObject(obj) {
+      if (obj !== null) {
+       Object.keys(obj).forEach(key => {
+        if (typeof obj[key] !== 'object') {
+          obj[key] = this.getCleanSrc(obj[key]);
+        }
+        if (typeof obj[key] === 'object') {
+          this.iterateObject(obj[key])
+        }
+      })
+      }
+      return obj;
+    }
+
+    getCleanSrc(src) {
+        if (typeof(src) === 'string') {
+          return this.getString(src);
+        }
+        if (typeof(src) === 'object') {
+          return this.iterateObject(src)
+        }
+        return src;
+    }
+
     handleCopy = () => {
         const container = document.createElement('textarea');
         const { clickCallback, src, namespace } = this.props;
-        container.innerHTML = typeof(src) === 'string' ? this.getString(src) : JSON.stringify(
+        const cleanSrc = this.getCleanSrc(src);
+        container.innerHTML = typeof(cleanSrc) === 'string' ? this.getString(src) : JSON.stringify(
             this.clipboardValue(src),
             null,
             '  '
