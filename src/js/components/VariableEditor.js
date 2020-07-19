@@ -54,6 +54,7 @@ class VariableEditor extends React.PureComponent {
             indentWidth,
             enableClipboard,
             filterCallbackAction,
+            deactivateFilterOnNamespace,
             onEdit,
             onDelete,
             onSelect,
@@ -61,6 +62,7 @@ class VariableEditor extends React.PureComponent {
         } = this.props;
         const { editMode } = this.state;
 
+        const showFilter = filterCallbackAction && !deactivateFilterOnNamespace.includes(namespace[1]);
         return (
             <div
                 {...Theme(theme, 'objectKeyVal', {
@@ -125,7 +127,7 @@ class VariableEditor extends React.PureComponent {
                         {...{ theme, namespace }}
                     />
                 ) : null}
-                {filterCallbackAction ? (
+                {showFilter ? (
                     <ClickToFilter
                         keyName={variable.name}
                         value={variable.value}
