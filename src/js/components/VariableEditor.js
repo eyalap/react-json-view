@@ -61,8 +61,7 @@ class VariableEditor extends React.PureComponent {
             rjvId
         } = this.props;
         const { editMode } = this.state;
-
-        const showFilter = filterCallbackAction && !deactivateFilterOnNamespace.includes(namespace[1]);
+        const showFilter = filterCallbackAction && namespace && !deactivateFilterOnNamespace.includes(namespace[1]);
         return (
             <div
                 {...Theme(theme, 'objectKeyVal', {
