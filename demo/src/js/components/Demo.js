@@ -51,7 +51,7 @@ export default class extends React.PureComponent {
         const style = {
             padding: "10px",
             borderRadius: "3px",
-            margin: "10px 0px"
+            margin: "10px 0px",
         }
 
         return (

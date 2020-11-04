@@ -62,7 +62,7 @@ const getDefaultThemeStyling = theme => {
         },
         ellipsis: {
             display: 'inline-block',
-            color: colors.ellipsisColor,
+            color: '#263238',
             fontSize: constants.ellipsisFontSize,
             lineHeight: constants.ellipsisLineHeight,
             cursor: constants.ellipsisCursor
@@ -86,7 +86,7 @@ const getDefaultThemeStyling = theme => {
         colon: {
             display: 'inline-block',
             margin: constants.keyMargin,
-            color: colors.keyColor,
+            color: '#263238',
             verticalAlign: 'top'
         },
         objectKeyVal: (component, variable_style) => {
@@ -96,7 +96,7 @@ const getDefaultThemeStyling = theme => {
                     paddingRight: constants.keyValPaddingRight,
                     paddingBottom: constants.keyValPaddingBottom,
                     borderLeft:
-                        constants.keyValBorderLeft + ' ' + colors.objectBorder,
+                        constants.keyValBorderLeft + ' ' + 'transparent',
                     ':hover': {
                         paddingLeft: variable_style.paddingLeft - 1 + 'px',
                         borderLeft:
@@ -120,13 +120,13 @@ const getDefaultThemeStyling = theme => {
                     display: 'inline-block',
                     paddingRight: constants.variableValuePaddingRight,
                     position: 'relative',
-                    ...variable_style
+                    ...variable_style,
                 }
             };
         },
         'object-name': {
             display: 'inline-block',
-            color: colors.keyColor,
+            color: '#263238',
             letterSpacing: constants.keyLetterSpacing,
             fontStyle: constants.keyFontStyle,
             verticalAlign: constants.keyVerticalAlign,
@@ -137,7 +137,7 @@ const getDefaultThemeStyling = theme => {
         },
         'array-key': {
             display: 'inline-block',
-            color: colors.arrayKeyColor,
+            color: '#263238',
             letterSpacing: constants.keyLetterSpacing,
             fontStyle: constants.keyFontStyle,
             verticalAlign: constants.keyVerticalAlign,
@@ -160,18 +160,19 @@ const getDefaultThemeStyling = theme => {
         },
         boolean: {
             display: 'inline-block',
-            color: colors.dataTypes.boolean
+            color: '#5C6BC0'
         },
         date: {
             display: 'inline-block',
-            color: colors.dataTypes.date
+            color: '#263238',
         },
         'date-value': {
-            marginLeft: constants.dateValueMarginLeft
+            marginLeft: constants.dateValueMarginLeft,
+            color: '#5C6BC0'
         },
         float: {
             display: 'inline-block',
-            color: colors.dataTypes.float
+            color: '#5C6BC0'
         },
         function: {
             display: 'inline-block',
@@ -180,15 +181,16 @@ const getDefaultThemeStyling = theme => {
             whiteSpace: 'pre-line'
         },
         'function-value': {
-            fontStyle: 'italic'
+            fontStyle: 'italic',
+            color: '#5C6BC0'
         },
         integer: {
             display: 'inline-block',
-            color: colors.dataTypes.integer
+            color: '#5C6BC0'
         },
         string: {
             display: 'inline-block',
-            color: colors.dataTypes.string
+             color: '#5C6BC0'
         },
         nan: {
             display: 'inline-block',
@@ -201,7 +203,7 @@ const getDefaultThemeStyling = theme => {
         },
         null: {
             display: 'inline-block',
-            color: colors.dataTypes.null,
+            color: '#5C6BC0',
             fontSize: constants.nullFontSize,
             fontWeight: constants.nullFontWeight,
             backgroundColor: colors.dataTypes.background,
@@ -210,7 +212,7 @@ const getDefaultThemeStyling = theme => {
         },
         undefined: {
             display: 'inline-block',
-            color: colors.dataTypes.undefined,
+            color: '#5C6BC0',
             fontSize: constants.undefinedFontSize,
             padding: constants.undefinedPadding,
             borderRadius: constants.undefinedBorderRadius,
@@ -218,16 +220,16 @@ const getDefaultThemeStyling = theme => {
         },
         regexp: {
             display: 'inline-block',
-            color: colors.dataTypes.regexp
+            color: '#263238',
         },
         'copy-to-clipboard': {
             cursor: constants.clipboardCursor
         },
         'copy-icon': {
-            color: colors.copyToClipboard,
+            color: '#546E7A',
             fontSize: constants.iconFontSize,
             marginRight: constants.iconMarginRight,
-            verticalAlign: 'top'
+            verticalAlign: 'top',
         },
         'copy-icon-copied': {
             color: colors.copyToClipboardCheck,
@@ -386,7 +388,7 @@ const getDefaultThemeStyling = theme => {
             color: colors.validationFailure.iconColor,
             fontSize: constants.iconFontSize,
             transform: 'rotate(45deg)'
-        }
+        },
     };
 };
 
