@@ -1,7 +1,6 @@
 import React from 'react';
 import AutosizeTextarea from 'react-textarea-autosize';
 
-import { toType } from './../helpers/util';
 import dispatcher from './../helpers/dispatcher';
 import parseInput from './../helpers/parseInput';
 import stringifyVariable from './../helpers/stringifyVariable';
@@ -11,8 +10,8 @@ import ClickToFilter from './FilterCallbackAction';
 //data type components
 import {
     JsonBoolean,
-    JsonDate,
     JsonFloat,
+    JsonDate,
     JsonFunction,
     JsonInteger,
     JsonNan,

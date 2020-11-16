@@ -2,7 +2,6 @@ export default {
     white: '#fff',
     black: '#000',
     transparent: 'rgba(1, 1, 1, 0)',
-
     globalFontFamily: 'monospace',
     globalCursor: 'default',
 
