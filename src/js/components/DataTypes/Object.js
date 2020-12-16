@@ -198,7 +198,7 @@ class RjvObject extends React.PureComponent {
 
         return (
             <div
-                class="object-key-val"
+                className={`object-key-val ${expanded ? 'expanded' : 'collapsed'}`}
                 {...Theme(theme, jsvRoot ? 'jsv-root' : 'objectKeyVal', styles)}
             >
                 {this.getBraceStart(object_type, expanded)}
